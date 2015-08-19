@@ -7,6 +7,12 @@ MAKE_OPT=-j8
 BINUTILS_VER=2.25
 BINUTILS_FILE=binutils-$BINUTILS_VER
 
+LINUX_VER=4.1.6
+LINUX_FILE=linux-$LINUX_VER
+
+GLIBC_VER=2.26
+GLIBC_FILE=glibc-$GLIBC_VER
+
 GCC_VER=5.2.0
 GCC_FILE=gcc-$GCC_VER
 
@@ -48,6 +54,9 @@ function download_file(){
 
   download http://ftp.gnu.org/gnu/binutils $BINUTILS_FILE.tar.gz
   download http://ftp.gnu.org/gnu/gcc/$GCC_FILE $GCC_FILE.tar.gz
+  download_file https://www.kernel.org/pub/linux/kernel/v4.x/ $LINUX_FILE.tar.gz
+  download_file http://ftp.gnu.org/gnu/glibc/ $GLIBC_FILE.tar.gz
+
   cd ..
 }
 
